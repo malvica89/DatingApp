@@ -74,7 +74,8 @@
               "browserTarget": "client:build:production"
             },
             "development": {
-              "browserTarget": "client:build:development"
+              "browserTarget": "client:build:development",
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "development"
