@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { user } from './_model/user';
+import { User } from './_model/user';
 import { AccountService } from './_services/account.service';
 
 @Component({
@@ -21,7 +21,7 @@ this.SetCurrentUser();
 
   SetCurrentUser()
   {
-    const user:user = JSON.parse(localStorage.getItem('user'));
+    const user:User = JSON.parse(localStorage.getItem('user'));
     this.accountservice.SetCurrentUser(user);
   }
 
