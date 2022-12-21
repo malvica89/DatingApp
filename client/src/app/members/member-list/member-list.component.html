@@ -3,7 +3,7 @@
 </div>
 
 <div class="container mt-3" *ngIf="userParams">
-    <form #form="ngForm" class="d-flex mb-3" (ngSubmit)="loadMembers()" autocomplete="off">
+    <form #form="ngForm" class="d-flex mb-3" (ngSubmit)="applyFilters()" autocomplete="off">
         <div class="d-flex mx-2">
             <label class="col-form-label">Age from:</label>
             <input 
@@ -74,8 +74,7 @@
     [totalItems]="pagination.totalItems"
     [itemsPerPage]="pagination.itemsPerPage"
     [maxSize]="10"
-    [(ngModel)]="pagination.currentPage"
-    ac
+    [ngModel]="pagination.currentPage"
     (pageChanged)="pageChanged($event)"
     previousText="&lsaquo;"
     nextText="&rsaquo;"

@@ -29,7 +29,7 @@ namespace API.Controllers
             {
                 return BadRequest("Username is Taken");
             }
-
+        
             var user = _mapper.Map<AppUser>(register);
 
             using var hmac = new HMACSHA512();

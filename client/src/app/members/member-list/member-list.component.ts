@@ -29,13 +29,7 @@ export class MemberListComponent implements OnInit {
    this.loadMembers();
   }
 
-  loadMembers(pageChange?:boolean){
-    if(this.userParams)
-    {
-      if(pageChange == undefined)
-      {
-        this.userParams.pageNumber =1;
-      }
+  loadMembers(){
       this.memberService.setUserParams(this.userParams);
       this.memberService.getMembers(this.userParams).subscribe({
         next: response =>{
@@ -46,13 +40,18 @@ export class MemberListComponent implements OnInit {
         }
       })
     }
+
+  applyFilters() {
+    this.userParams.pageNumber = 1;
+    this.memberService.setUserParams(this.userParams);
+    this.loadMembers();
   }
 
   pageChanged(event:any){
     if(this.userParams.pageNumber !== event.page){
       this.userParams.pageNumber = event.page;
       this.memberService.setUserParams(this.userParams);
-      this.loadMembers(true);
+      this.loadMembers();
     }
   }
 

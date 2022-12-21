@@ -13,7 +13,7 @@ namespace API.Data
         {
         }
         public DbSet<AppUser> Users{get;set;}
-        public DbSet<UserLike> MyProperty { get; set; }
+        public DbSet<UserLike> Likes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
