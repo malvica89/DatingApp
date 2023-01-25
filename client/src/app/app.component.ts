@@ -22,7 +22,8 @@ this.SetCurrentUser();
   SetCurrentUser()
   {
     const user:User = JSON.parse(localStorage.getItem('user'));
-    this.accountservice.SetCurrentUser(user);
+    if(user != null)
+      this.accountservice.SetCurrentUser(user);
   }
 
   // getUsers(){
